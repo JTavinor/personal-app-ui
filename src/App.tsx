@@ -1,17 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import { useQuery } from '@apollo/client';
-import { GET_LOCATIONS } from './queries';
+import logo from "./logo.svg";
+import "./App.css";
+import { useQuery } from "@apollo/client";
+import { GET_LOCATIONS } from "./queries";
 
 function App() {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
-
 
   if (loading) return <p>Loading...</p>;
 
   if (error) return <p>Error : {error.message}</p>;
 
-  console.log('data', data)
+  console.log("data", data);
 
   return (
     <div className="App">
