@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import config from "./config";
+  import config from "./config";
 
 console.log(config.graphQLServerUrl);
 const client = new ApolloClient({
@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App prop1="hello"/>
+      <App prop1="hello" />
     </ApolloProvider>
   </React.StrictMode>,
 );
