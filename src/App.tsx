@@ -3,7 +3,7 @@ import "./App.css";
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "./queries";
 
-function App() {
+function App({prop1}:{prop1?: string}) {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
 
   if (loading) return <p>Loading...</p>;
@@ -11,6 +11,7 @@ function App() {
   if (error) return <p>Error : {error.message}</p>;
 
   console.log("data", data);
+console.log('prop1', prop1)
 
   return (
     <div className="App">
