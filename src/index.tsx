@@ -6,7 +6,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import config from './config';
 
-const a  = 'jel'
 
 console.log(config.graphQLServerUrl)
 const client = new ApolloClient({

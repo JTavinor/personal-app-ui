@@ -20,7 +20,12 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "husky": "^8.0.0"
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
