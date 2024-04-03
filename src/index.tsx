@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-  import config from "./config";
+import config from "./config";
 
 console.log(config.graphQLServerUrl);
 const client = new ApolloClient({
