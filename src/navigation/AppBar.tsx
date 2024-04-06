@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const AppBar = () => {
   return (
     <div
@@ -11,7 +13,8 @@ const AppBar = () => {
         boxSizing: "border-box",
       }}
     >
-      {/* Your AppBar content */}
+<NavLink to='/path1'>Path 1</NavLink>
+<NavLink to='/path2'>Path 2</NavLink>
     </div>
   );
 };
