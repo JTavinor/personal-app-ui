@@ -11,11 +11,10 @@ function App() {
 
   if (error) return <p>Error : {error.message}</p>;
 
-
   return (
     <>
-   <AppBar/>
-  <AppRoutes/>
+      <AppBar />
+      <AppRoutes />
     </>
   );
 }
