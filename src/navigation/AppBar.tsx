@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { APP_BAR_LINK_CONFIG } from "./appBarLinkConfig";
+import AppBarNavLink from "./AppBarNavLink";
 
 const AppBar = () => {
   return (
@@ -7,14 +8,14 @@ const AppBar = () => {
         position: "fixed",
         top: 0,
         width: "100%",
-        height: "30px",
-        borderBottom: "1px solid red",
+        height: "72px",
+
         zIndex: 999,
-        boxSizing: "border-box",
+boxShadow:'0 2px 4px rgba(0, 0, 0, 0.5)',
+        backgroundColor: '#212121'
       }}
     >
-<NavLink to='/path1'>Path 1</NavLink>
-<NavLink to='/path2'>Path 2</NavLink>
+      {APP_BAR_LINK_CONFIG.map(({to, title}) => <AppBarNavLink to={to} title={title} key={title}/>)}
     </div>
   );
 };
