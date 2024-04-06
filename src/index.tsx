@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import config from "./config";
+import { BrowserRouter } from "react-router-dom";
 
 console.log(config.graphQLServerUrl);
 const client = new ApolloClient({
@@ -17,9 +18,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <ApolloProvider client={client}>
-      <App prop1="hello" />
+      <App  />
     </ApolloProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );
 
