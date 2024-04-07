@@ -1,7 +1,7 @@
 import { faEdit, faSave } from "@fortawesome/free-regular-svg-icons";
 import IconButton from "../common/IconButton";
 import { useState } from "react";
-import InputField from "../common/InputField";
+import InputField from "../common/Inputs/InputField";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useMutation } from "@apollo/client";
 import { SAVE_CATEGORY } from "./mutations";

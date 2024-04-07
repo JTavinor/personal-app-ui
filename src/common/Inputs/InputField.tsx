@@ -1,13 +1,7 @@
-import { InputWrapper, StyledInput } from "./styles";
 import InputLabel from "./InputLabel";
-
-interface InputFieldProps {
-  label?: string;
-  placeholder?: string;
-  onChange: (value: string) => void; // Change the type here
-  value?: string | number; // Adjust the type here
-  type?: string;
-}
+import { generateRandomInputId } from "./inputHelper";
+import { InputFieldProps } from "./inputs";
+import { InputWrapper, StyledInput } from "./styles";
 
 const InputField = ({
   label,
@@ -16,7 +10,7 @@ const InputField = ({
   value,
   type = "text",
 }: InputFieldProps) => {
-  const inputId = `input_${Math.random().toString(36).substr(2, 9)}`;
+  const inputId = generateRandomInputId();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;

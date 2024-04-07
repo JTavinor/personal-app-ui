@@ -1,12 +1,13 @@
 import { useState } from "react";
-import InputField from "../../common/InputField";
-import Select, { SelectOptions } from "../../common/Select";
+import InputField from "../../common/Inputs/InputField";
+import Select from "../../common/Inputs/Select";
 import { CreateExpensesRowWrapper } from "./styles";
+import { SelectOption } from "../../common/Inputs/inputs";
 
 const CreateExpenseRow = ({
   categoryOptions,
 }: {
-  categoryOptions: SelectOptions[];
+  categoryOptions: SelectOption[];
 }) => {
   const [newExpense, setNewExpense] = useState({
     name: "",

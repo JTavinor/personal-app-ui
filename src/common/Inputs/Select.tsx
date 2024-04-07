@@ -1,23 +1,8 @@
-import InputLabel from "../InputField/InputLabel";
-import { InputWrapper } from "../InputField/styles";
-import { StyledSelect } from "./styles";
+import InputLabel from "./InputLabel";
+import { SelectProps } from "./inputs";
+import { InputWrapper, StyledSelect } from "./styles";
 
-export interface SelectOptions {
-  value: string;
-  label: string;
-}
-
-const Select = ({
-  options,
-  onChange,
-  value,
-  label,
-}: {
-  options: SelectOptions[];
-  onChange: (value: string) => void;
-  value: string;
-  label?: string;
-}) => {
+const Select = ({ options, onChange, value, label }: SelectProps) => {
   const inputId = `input_${Math.random().toString(36).substr(2, 9)}`;
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
