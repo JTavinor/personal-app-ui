@@ -6,7 +6,7 @@ import spacing from "../styles/spacing";
 export const AppBarContainer = styled.div`
   top: 0;
   width: 100%;
-  height: 72px;
+  height: 52px;
   padding: 0 ${spacing.LARGE};
   z-index: 999;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);

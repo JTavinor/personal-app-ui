@@ -4,7 +4,7 @@ import InputField from "../common/InputField";
 const CreateCategory = () => {
   return (
     <ContentContainer>
-      <InputField />
+      <InputField label="Category:" placeholder="Enter new category..." />
     </ContentContainer>
   );
 };
