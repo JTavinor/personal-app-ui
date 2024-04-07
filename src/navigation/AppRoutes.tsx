@@ -9,7 +9,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path={URLS.MONEY} element={<Money />}>
         <Route index element={<Categories />} />
-        <Route path={URLS.CREATE_CATEGORY} element={<Categories />} />
+        <Route path={URLS.CATEGORIES} element={<Categories />} />
         <Route path={URLS.CREATE_EXPENSES} element={<CreateExpenses />} />
       </Route>
     </Routes>

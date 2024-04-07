@@ -18,4 +18,5 @@ export const StyledInput = styled.input`
   padding: 4px 6px 3px;
   font-size: 16px;
   max-width: 280px;
+  box-sizing: border-box;
 `;

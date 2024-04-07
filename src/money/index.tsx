@@ -13,7 +13,7 @@ const Money = () => {
       }}
     >
       <ContentContainer width="240px">
-        <NavLink to={URLS.CREATE_CATEGORY}>Create Category</NavLink>
+        <NavLink to={URLS.CATEGORIES}>Categories</NavLink>
         <NavLink to={URLS.CREATE_EXPENSES}>Create Expenses</NavLink>
       </ContentContainer>
       <Outlet />
