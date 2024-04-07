@@ -1,8 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { StyledNavLink } from "./styles";
 
 const AppBarNavLink = ({ to, title }: { to: string; title: string }) => {
-  return <NavLink to={to} style={({isActive}) => ({color: '#fff', textDecoration: 'none', padding: '0 8px', borderBottomColor: isActive ? '#fff' :'transparent',
-   borderBottom:  '4px solid', height: '100%', boxSizing:'border-box', display: 'flex', alignItems:'center'})}>{title}</NavLink>;
+  return (
+    <StyledNavLink
+      to={to}
+      className={({isActive}) => isActive ? "active" : ""}
+     
+    >
+      {title}
+    </StyledNavLink>
+  );
 };
 
 export default AppBarNavLink;
