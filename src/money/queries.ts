@@ -9,11 +9,11 @@ export const GET_CATEGORIES = gql`
   }
 `;
 
-export interface Category {
+export interface CategoryType {
   name: string;
   _id: string;
 }
 
 export interface GetCategoriesData {
-  categories: Category[];
+  categories: CategoryType[];
 }

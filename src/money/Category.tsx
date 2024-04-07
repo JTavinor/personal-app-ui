@@ -5,14 +5,9 @@ import InputField from "../common/InputField";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useMutation } from "@apollo/client";
 import { SAVE_CATEGORY } from "./mutations";
-import { GET_CATEGORIES } from "./queries";
+import { CategoryType, GET_CATEGORIES } from "./queries";
 
-interface CategoryProps {
-  name: string;
-  _id: string;
-}
-
-const Category = ({ category }: { category?: CategoryProps }) => {
+const Category = ({ category }: { category?: CategoryType }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(category?.name || "");
 
