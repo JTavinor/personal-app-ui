@@ -1,1 +1,6 @@
-export default { BASE_URL: "/", PATH1: "/path1", PATH2: "/path2" };
+export default {
+  BASE_URL: "/",
+  MONEY: "/money",
+  CREATE_EXPENSES: "create-expenses",
+  CREATE_CATEGORY: "create-category",
+};

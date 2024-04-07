@@ -4,7 +4,6 @@ import colors from "../styles/colors";
 import spacing from "../styles/spacing";
 
 export const AppBarContainer = styled.div`
-  position: fixed;
   top: 0;
   width: 100%;
   height: 72px;
