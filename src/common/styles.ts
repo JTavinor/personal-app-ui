@@ -8,7 +8,7 @@ interface ContentContainerProps {
 
 export const ContentContainerWrapper = styled.div<ContentContainerProps>`
   width: ${({ width }) => width};
-  padding: ${spacing.STANDARD};
+  padding: ${spacing.LARGE};
   border: 1px solid ${colors.BLACK};
   border-radius: 8px;
   height: 100%;
