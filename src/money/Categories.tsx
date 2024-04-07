@@ -3,6 +3,7 @@ import ContentContainer from "../common/ContentContainer";
 import InputField from "../common/InputField";
 import Button from "../common/Button";
 import Category from "./Category";
+import NewCategory from "./NewCategory";
 
 const Categories = () => {
   const [category, setCategory] = useState("");
@@ -27,12 +28,7 @@ const Categories = () => {
       {categories.map((cat) => (
         <Category category={cat} key={cat.name} />
       ))}
-      <InputField
-        label="Category:"
-        placeholder="Enter new category..."
-        onChange={setCategory}
-      />
-      <Button onClick={() => console.log(category)}>Save</Button>
+      <NewCategory />
     </ContentContainer>
   );
 };
