@@ -1,25 +1,14 @@
+import { QueryResult, useQuery } from "@apollo/client";
 import ContentContainer from "../common/ContentContainer";
 import Category from "./Category";
+import { GET_CATEGORIES, GetCategoriesData } from "./queries";
 
 const Categories = () => {
-  const categories = [
-    {
-      name: "Food",
-      _id: "1",
-    },
-    {
-      name: "Eating Out",
-      _id: "2",
-    },
-    {
-      name: "Bills",
-      _id: "3",
-    },
-  ];
+  const { data }: QueryResult<GetCategoriesData> = useQuery(GET_CATEGORIES);
 
   return (
     <ContentContainer>
-      {categories.map((cat) => (
+      {data?.categories.map((cat) => (
         <Category category={cat} key={cat.name} />
       ))}
       <Category />
