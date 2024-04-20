@@ -3,6 +3,10 @@ import InputField from "../../common/Inputs/InputField";
 import Select from "../../common/Inputs/Select";
 import { CreateExpensesRowWrapper } from "./styles";
 import { SelectOption } from "../../common/Inputs/inputs";
+import IconButton from "../../common/IconButton";
+import { faSave } from "@fortawesome/free-regular-svg-icons";
+import { SAVE_EXPENSE } from "./mutations";
+import { useMutation } from "@apollo/client";
 
 const CreateExpenseRow = ({
   categoryOptions,
@@ -15,6 +19,8 @@ const CreateExpenseRow = ({
     category: "",
     date: "",
   });
+
+  const [saveExpense] = useMutation(SAVE_EXPENSE);
 
   return (
     <CreateExpensesRowWrapper>
@@ -44,6 +50,12 @@ const CreateExpenseRow = ({
       <input
         type="date"
         onChange={(e) => setNewExpense({ ...newExpense, date: e.target.value })}
+      />
+      <IconButton
+        onClick={() => {
+          saveExpense({ variables: { expense: newExpense } });
+        }}
+        icon={faSave}
       />
     </CreateExpensesRowWrapper>
   );
