@@ -2,9 +2,13 @@ import { useState } from "react";
 import { generateArray } from "../../utils/numberUtils";
 import Button from "../Button";
 import HorizontalRowFormRow, { FormItem } from "./HorizontalRowFormRow";
+import { HorizontalFlexWrapper } from "../../styles/formatWrappers";
+import { DocumentNode, useMutation } from "@apollo/client";
 
 const HorizontalRowForm = ({
   rowConfig,
+  mutationVariableName,
+  mutation,
 }: {
   rowConfig: {
     inputType: string;
@@ -15,11 +19,15 @@ const HorizontalRowForm = ({
       label: string;
     }[];
   }[];
+  mutationVariableName: string;
+  mutation: DocumentNode;
 }) => {
   const [formItems, setFormItems] = useState<FormItem[]>([{}]);
   const [numRows, setNumRows] = useState(1);
 
-  console.log("numRows", numRows);
+  const [saveForm] = useMutation(mutation);
+
+  console.log("formItems", typeof formItems[0].weight);
 
   return (
     <div>
@@ -28,18 +36,27 @@ const HorizontalRowForm = ({
           setFormItems={setFormItems}
           rowNum={rowNum}
           key={rowNum}
-          fieldValues={formItems[numRows - 1]}
+          fieldValues={formItems[rowNum - 1]}
           rowConfig={rowConfig}
         />
       ))}
-      <Button
-        onClick={() => {
-          setNumRows((prevNumRows) => prevNumRows + 1);
-          setFormItems((prevFormItems) => [...prevFormItems, {}]);
-        }}
-      >
-        Add Row
-      </Button>
+      <HorizontalFlexWrapper>
+        <Button
+          onClick={() => {
+            setNumRows((prevNumRows) => prevNumRows + 1);
+            setFormItems((prevFormItems) => [...prevFormItems, {}]);
+          }}
+        >
+          Add Row
+        </Button>
+        <Button
+          onClick={() => {
+            saveForm({ variables: { [mutationVariableName]: formItems } });
+          }}
+        >
+          Save
+        </Button>
+      </HorizontalFlexWrapper>
     </div>
   );
 };

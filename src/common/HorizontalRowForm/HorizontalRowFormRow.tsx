@@ -29,7 +29,6 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
   fieldValues,
   rowConfig,
 }: HorizontalRowFormRowProps) => {
-  console.log("rowCOofig", rowConfig);
   return (
     <HorizontalFlexWrapper>
       {rowConfig.map((field, index) => {
@@ -41,11 +40,11 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
               value={fieldValues[field.fieldName]}
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
-                  const updatedFormItems = prevFormItems.map((item, idx) =>
-                    idx === rowNum
+                  const updatedFormItems = prevFormItems.map((item, idx) => {
+                    return idx === rowNum - 1
                       ? { ...item, [field.fieldName]: Number(newValue) }
-                      : item
-                  );
+                      : item;
+                  });
                   return updatedFormItems;
                 })
               }
@@ -62,7 +61,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) =>
-                    idx === rowNum
+                    idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
                       : item
                   );
@@ -82,7 +81,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) =>
-                    idx === rowNum
+                    idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
                       : item
                   );
@@ -102,7 +101,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
               onChange={(e) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) =>
-                    idx === rowNum
+                    idx === rowNum - 1
                       ? { ...item, [field.fieldName]: e.target.value }
                       : item
                   );

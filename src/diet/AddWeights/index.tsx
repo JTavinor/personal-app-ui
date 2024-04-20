@@ -1,5 +1,6 @@
 import HorizontalRowForm from "../../common/HorizontalRowForm";
 import InputTypeEnums from "../../enums/InputTypeEnums";
+import { SAVE_WEIGHTS } from "./mutations";
 
 const AddWeights = () => {
   return (
@@ -16,6 +17,8 @@ const AddWeights = () => {
           fieldName: "date",
         },
       ]}
+      mutation={SAVE_WEIGHTS}
+      mutationVariableName="weights"
     />
   );
 };

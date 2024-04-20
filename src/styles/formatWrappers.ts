@@ -8,5 +8,5 @@ interface HorizontalFlexWrapperProps {
 export const HorizontalFlexWrapper = styled.div<HorizontalFlexWrapperProps>`
   display: flex;
   gap: ${spacing.STANDARD};
-  align-items: center;
+  align-items: flex-end;
 `;
