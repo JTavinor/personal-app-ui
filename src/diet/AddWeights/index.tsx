@@ -12,11 +12,13 @@ const AddWeights = () => {
             inputType: InputTypeEnums.NUMBER,
             label: "Weight",
             fieldName: "weight",
+            isRequired: true,
           },
           {
             inputType: InputTypeEnums.DATE,
             label: "Date",
             fieldName: "date",
+            isRequired: true,
           },
         ]}
         mutation={SAVE_WEIGHTS}

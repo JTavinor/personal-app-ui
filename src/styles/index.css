@@ -22,3 +22,7 @@ button {
 button:hover {
   background-color: darkblue;
 }
+
+button:disabled {
+  background-color: gray;
+}

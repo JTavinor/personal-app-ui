@@ -5,6 +5,7 @@ import HorizontalRowFormRow, { FormItem } from "./HorizontalRowFormRow";
 import { HorizontalFlexWrapper } from "../../styles/formatWrappers";
 import { DocumentNode, useMutation } from "@apollo/client";
 import spacing from "../../styles/spacing";
+import { isSaveButtonDisabled } from "./horizontalRowFormHelper";
 
 const HorizontalRowForm = ({
   rowConfig,
@@ -15,6 +16,7 @@ const HorizontalRowForm = ({
     inputType: string;
     label: string;
     fieldName: string;
+    isRequired?: boolean;
     selectOptions?: {
       value: string;
       label: string;
@@ -60,6 +62,7 @@ const HorizontalRowForm = ({
           onClick={() => {
             saveForm({ variables: { [mutationVariableName]: formItems } });
           }}
+          disabled={isSaveButtonDisabled({ formItems, rowConfig })}
         >
           Save
         </Button>
