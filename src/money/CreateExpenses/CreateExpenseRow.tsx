@@ -1,12 +1,12 @@
 import { useState } from "react";
 import InputField from "../../common/Inputs/InputField";
 import Select from "../../common/Inputs/Select";
-import { CreateExpensesRowWrapper } from "./styles";
 import { SelectOption } from "../../common/Inputs/inputs";
 import IconButton from "../../common/IconButton";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import { SAVE_EXPENSE } from "./mutations";
 import { useMutation } from "@apollo/client";
+import { HorizontalFlexWrapper } from "../../styles/formatWrappers";
 
 const CreateExpenseRow = ({
   categoryOptions,
@@ -23,7 +23,7 @@ const CreateExpenseRow = ({
   const [saveExpense] = useMutation(SAVE_EXPENSE);
 
   return (
-    <CreateExpensesRowWrapper>
+    <HorizontalFlexWrapper>
       <InputField
         label="Expense Name"
         value={newExpense.name}
@@ -57,7 +57,7 @@ const CreateExpenseRow = ({
         }}
         icon={faSave}
       />
-    </CreateExpensesRowWrapper>
+    </HorizontalFlexWrapper>
   );
 };
 
