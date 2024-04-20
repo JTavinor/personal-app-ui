@@ -95,14 +95,16 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
 
         if (field.inputType === InputTypeEnums.DATE) {
           return (
-            <input
+            <InputField
               key={index}
+              label={field.label}
+              value={fieldValues[field.fieldName]}
               type="date"
-              onChange={(e) =>
+              onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) =>
                     idx === rowNum - 1
-                      ? { ...item, [field.fieldName]: e.target.value }
+                      ? { ...item, [field.fieldName]: newValue }
                       : item
                   );
                   return updatedFormItems;

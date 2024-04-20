@@ -4,6 +4,7 @@ import Button from "../Button";
 import HorizontalRowFormRow, { FormItem } from "./HorizontalRowFormRow";
 import { HorizontalFlexWrapper } from "../../styles/formatWrappers";
 import { DocumentNode, useMutation } from "@apollo/client";
+import spacing from "../../styles/spacing";
 
 const HorizontalRowForm = ({
   rowConfig,
@@ -30,7 +31,13 @@ const HorizontalRowForm = ({
   console.log("formItems", typeof formItems[0].weight);
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: spacing.STANDARD,
+      }}
+    >
       {generateArray(numRows).map((rowNum) => (
         <HorizontalRowFormRow
           setFormItems={setFormItems}
