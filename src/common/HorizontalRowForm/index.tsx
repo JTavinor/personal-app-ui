@@ -5,7 +5,10 @@ import HorizontalRowFormRow, { FormItem } from "./HorizontalRowFormRow";
 import { HorizontalFlexWrapper } from "../../styles/formatWrappers";
 import { DocumentNode, useMutation } from "@apollo/client";
 import spacing from "../../styles/spacing";
-import { isSaveButtonDisabled } from "./horizontalRowFormHelper";
+import {
+  addDefaultsToInitialEntry,
+  isSaveButtonDisabled,
+} from "./horizontalRowFormHelper";
 
 const HorizontalRowForm = ({
   rowConfig,
@@ -26,12 +29,14 @@ const HorizontalRowForm = ({
   mutationVariableName: string;
   mutation: DocumentNode;
 }) => {
-  const [formItems, setFormItems] = useState<FormItem[]>([{}]);
+  const [formItems, setFormItems] = useState<FormItem[]>([
+    addDefaultsToInitialEntry(rowConfig),
+  ]);
   const [numRows, setNumRows] = useState(1);
 
-  const [saveForm] = useMutation(mutation);
-
-  console.log("formItems", typeof formItems[0].weight);
+  const [saveForm] = useMutation(mutation, {
+    onCompleted: () => setFormItems([addDefaultsToInitialEntry(rowConfig)]),
+  });
 
   return (
     <div
@@ -54,7 +59,10 @@ const HorizontalRowForm = ({
         <Button
           onClick={() => {
             setNumRows((prevNumRows) => prevNumRows + 1);
-            setFormItems((prevFormItems) => [...prevFormItems, {}]);
+            setFormItems((prevFormItems) => [
+              ...prevFormItems,
+              addDefaultsToInitialEntry(rowConfig),
+            ]);
           }}
         >
           Add Row

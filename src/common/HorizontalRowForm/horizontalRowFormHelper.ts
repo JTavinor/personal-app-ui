@@ -26,3 +26,23 @@ export const isSaveButtonDisabled = ({
 
   return isDisabled;
 };
+
+interface InputObject {
+  inputType: string;
+  label: string;
+  fieldName: string;
+  isRequired?: boolean;
+  default?: string | number;
+}
+
+export function addDefaultsToInitialEntry(arr: InputObject[]): {
+  [key: string]: number | string;
+} {
+  const result: { [key: string]: number | string } = {};
+  arr.forEach((obj) => {
+    if (obj.default !== undefined) {
+      result[obj.fieldName] = obj.default;
+    }
+  });
+  return result;
+}

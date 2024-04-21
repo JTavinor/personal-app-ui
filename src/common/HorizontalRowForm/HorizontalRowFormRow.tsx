@@ -31,15 +31,20 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
   fieldValues,
   rowConfig,
 }: HorizontalRowFormRowProps) => {
+  console.log("fieldValues", fieldValues);
   return (
     <HorizontalFlexWrapper>
       {rowConfig.map((field, index) => {
         if (field.inputType === InputTypeEnums.NUMBER) {
+          console.log(
+            "fieldValues[field.fieldName]",
+            fieldValues[field.fieldName]
+          );
           return (
             <InputField
               key={index}
               label={field.label}
-              value={fieldValues[field.fieldName] || field.default}
+              value={fieldValues[field.fieldName] || field.default || ""}
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) => {
@@ -96,16 +101,11 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
         }
 
         if (field.inputType === InputTypeEnums.DATE) {
-          console.log("field.default", field.default);
-          console.log(
-            "fieldValues[field.fieldName] ",
-            fieldValues[field.fieldName]
-          );
           return (
             <InputField
               key={index}
               label={field.label}
-              value={fieldValues[field.fieldName] || "2024-04-24"}
+              value={fieldValues[field.fieldName] || field.default}
               type="date"
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
