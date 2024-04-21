@@ -65,7 +65,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
                   const updatedFormItems = prevFormItems.map((item, idx) =>
                     idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
-                      : item
+                      : item,
                   );
                   return updatedFormItems;
                 })
@@ -85,7 +85,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
                   const updatedFormItems = prevFormItems.map((item, idx) =>
                     idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
-                      : item
+                      : item,
                   );
                   return updatedFormItems;
                 })
@@ -107,7 +107,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
                   const updatedFormItems = prevFormItems.map((item, idx) =>
                     idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
-                      : item
+                      : item,
                   );
                   return updatedFormItems;
                 })

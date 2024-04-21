@@ -5,7 +5,7 @@ import LineChart from "../../common/Charts/LineChart";
 
 const WeightStats = () => {
   const { data }: QueryResult<GetWeightChartData> = useQuery(
-    GET_WEIGHT_CHART_DATA
+    GET_WEIGHT_CHART_DATA,
   );
 
   if (!data) return null;
