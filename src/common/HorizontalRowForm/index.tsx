@@ -17,6 +17,7 @@ const HorizontalRowForm = ({
     label: string;
     fieldName: string;
     isRequired?: boolean;
+    default?: string | number;
     selectOptions?: {
       value: string;
       label: string;

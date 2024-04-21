@@ -16,6 +16,8 @@ interface HorizontalRowFormRowProps {
     inputType: string;
     label: string;
     fieldName: string;
+    default?: string | number;
+    isRequired?: boolean;
     selectOptions?: {
       value: string;
       label: string;
@@ -37,7 +39,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
             <InputField
               key={index}
               label={field.label}
-              value={fieldValues[field.fieldName]}
+              value={fieldValues[field.fieldName] || field.default}
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) => {
@@ -57,13 +59,13 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
             <InputField
               key={index}
               label={field.label}
-              value={fieldValues[field.fieldName]}
+              value={fieldValues[field.fieldName] || field.default}
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) =>
                     idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
-                      : item,
+                      : item
                   );
                   return updatedFormItems;
                 })
@@ -83,7 +85,7 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
                   const updatedFormItems = prevFormItems.map((item, idx) =>
                     idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
-                      : item,
+                      : item
                   );
                   return updatedFormItems;
                 })
@@ -94,18 +96,23 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
         }
 
         if (field.inputType === InputTypeEnums.DATE) {
+          console.log("field.default", field.default);
+          console.log(
+            "fieldValues[field.fieldName] ",
+            fieldValues[field.fieldName]
+          );
           return (
             <InputField
               key={index}
               label={field.label}
-              value={fieldValues[field.fieldName]}
+              value={fieldValues[field.fieldName] || "2024-04-24"}
               type="date"
               onChange={(newValue) =>
                 setFormItems((prevFormItems: FormItem[]) => {
                   const updatedFormItems = prevFormItems.map((item, idx) =>
                     idx === rowNum - 1
                       ? { ...item, [field.fieldName]: newValue }
-                      : item,
+                      : item
                   );
                   return updatedFormItems;
                 })

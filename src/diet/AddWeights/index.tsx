@@ -1,6 +1,7 @@
 import ContentContainer from "../../common/ContentContainer";
 import HorizontalRowForm from "../../common/HorizontalRowForm";
 import InputTypeEnums from "../../enums/InputTypeEnums";
+import { getCurrentDateInInputFormat } from "../../utils/dateUtils";
 import { SAVE_WEIGHTS } from "./mutations";
 
 const AddWeights = () => {
@@ -19,6 +20,7 @@ const AddWeights = () => {
             label: "Date",
             fieldName: "date",
             isRequired: true,
+            default: getCurrentDateInInputFormat(),
           },
         ]}
         mutation={SAVE_WEIGHTS}
