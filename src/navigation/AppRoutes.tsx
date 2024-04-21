@@ -5,6 +5,7 @@ import CreateExpenses from "../money/CreateExpenses";
 import Categories from "../money/Categories";
 import Diet from "../diet";
 import AddWeights from "../diet/AddWeights";
+import WeightStats from "../diet/WeightStats";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path={URLS.DIET} element={<Diet />}>
         <Route index element={<AddWeights />} />
         <Route path={URLS.ADD_WEIGHTS} element={<AddWeights />} />
+        <Route path={URLS.WEIGHT_STATS} element={<WeightStats />} />
       </Route>
     </Routes>
   );

@@ -14,6 +14,7 @@ const Diet = () => {
     >
       <ContentContainer width="240px">
         <NavLink to={URLS.ADD_WEIGHTS}>Add Weights</NavLink>
+        <NavLink to={URLS.WEIGHT_STATS}>Stats</NavLink>
       </ContentContainer>
       <Outlet />
     </div>

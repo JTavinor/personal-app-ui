@@ -7,6 +7,7 @@ const moneyURLS = {
 const dietURLS = {
   DIET: "/diet",
   ADD_WEIGHTS: "add-weights",
+  WEIGHT_STATS: "weight-stats",
 };
 
 const URLS = {

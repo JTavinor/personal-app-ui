@@ -31,15 +31,10 @@ const HorizontalRowFormRow: React.FC<HorizontalRowFormRowProps> = ({
   fieldValues,
   rowConfig,
 }: HorizontalRowFormRowProps) => {
-  console.log("fieldValues", fieldValues);
   return (
     <HorizontalFlexWrapper>
       {rowConfig.map((field, index) => {
         if (field.inputType === InputTypeEnums.NUMBER) {
-          console.log(
-            "fieldValues[field.fieldName]",
-            fieldValues[field.fieldName]
-          );
           return (
             <InputField
               key={index}

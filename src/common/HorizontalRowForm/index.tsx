@@ -35,7 +35,10 @@ const HorizontalRowForm = ({
   const [numRows, setNumRows] = useState(1);
 
   const [saveForm] = useMutation(mutation, {
-    onCompleted: () => setFormItems([addDefaultsToInitialEntry(rowConfig)]),
+    onCompleted: () => {
+      setNumRows(1);
+      setFormItems([addDefaultsToInitialEntry(rowConfig)]);
+    },
   });
 
   return (
