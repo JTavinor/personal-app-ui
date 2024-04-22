@@ -9,6 +9,7 @@ export const GET_WEIGHT_CHART_DATA = gql`
         y
       }
     }
+    weightsStats
   }
 `;
 
@@ -24,4 +25,5 @@ export interface WeightChartData {
 
 export interface GetWeightChartData {
   weightsChart: WeightChartData[];
+  weightsStats: number;
 }
