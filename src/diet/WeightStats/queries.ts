@@ -9,7 +9,10 @@ export const GET_WEIGHT_CHART_DATA = gql`
         y
       }
     }
-    weightsStats
+    weightsStats {
+      lastSevenDayAverage
+      initialWeight
+    }
   }
 `;
 
@@ -23,7 +26,12 @@ export interface WeightChartData {
   data: WeightDataPoint[];
 }
 
+export interface WeightStats {
+  lastSevenDayAverage: number;
+  initialWeight: number;
+}
+
 export interface GetWeightChartData {
   weightsChart: WeightChartData[];
-  weightsStats: number;
+  weightsStats: WeightStats;
 }
